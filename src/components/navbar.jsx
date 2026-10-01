@@ -8,8 +8,9 @@ import Icon from "@/elements/icons";
 
 
 const navlinks = [
+     { href: "#Features", label: "Features" },
     { href: "#About", label: "About" },
-    { href: "#Services", label: "Servcies" },
+    { href: "#Services", label: "Services" },
     { href: "#Projects", label: "Projects" },
     { href: "#Process", label: "Process" },
     { href: "#Contact", label: "Contact" },
@@ -52,7 +53,13 @@ const Navbar = () => {
 
                 <div>
 
-                    <Button variant="outline" size="sm" className="shadow-[0_0_12px_var(--brand)] hidden md:block">
+                    <Button variant="outline" size="sm" className="shadow-[0_0_12px_var(--brand)] hidden md:block"
+                     onClick = { () => {
+                document.getElementById("Contact")?.scrollIntoView({
+                  behavior: "smooth"
+                });
+              }}
+              >
                         Lets Talk
                         {/* Arrow Icon */}
                         <HiArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />

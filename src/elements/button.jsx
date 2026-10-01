@@ -27,15 +27,19 @@
 
 import React from "react";
 
-const Button = ({ className = "", variant = "outline" ,  size = "sm", children }) => {
+const Button = ({ className = "", variant = "outline" ,  size = "sm", onClick, children }) => {
 
 
     const variantClasses = {
     outline:
         "shadow-[0_0_5px_var(--brand)] border-2 border-[var(--brand)] text-[var(--brand)] hover:bg-[var(--brand-hover)] hover:border-[var(--brand-hover)]  hover:-translate-y-0.5 hover:text-[var(--text-primary)]",
 
+    text_btn:
+    "text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-transform duration-200 hover:translate-y-1",    
+
+   
     filled:
-        "bg-[var(--brand)] border-2 border-[var(--border)] text-[var(--text-primary)] hover:bg-[var(--brand-hover)] hover:border-[var(--brand-hover)] hover:-translate-y-0.5 hover:shadow-lg"
+        "bg-[var(--brand)] border-2 border-[var(--border-filled-btn)] text-[var(--text-primary)] hover:bg-[var(--brand-hover)] hover:border-[var(--brand-hover)] hover:-translate-y-0.5 hover:shadow-lg"
 };
 
 
@@ -56,7 +60,7 @@ const baseclasses =
     `${baseclasses} ${variantClasses[variant]} ${sizeclasses[size]} ${className}`;
 
     return (
-        <button className={classes}>
+        <button className={classes} onClick={onClick}>
             <span className="relative flex items-center justify-center gap-2">
                 {children}
             </span>

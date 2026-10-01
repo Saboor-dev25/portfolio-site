@@ -1,65 +1,3 @@
-// import React from "react";
-// import Button from "@/elements/button";
-// import Icon from "@/elements/icons";
-// const About = () => {
-//     return (
-//         <section className="relative min-h-screen flex items-center bg-[var(--surface)] overflow-hidden py-20 lg:py-0">
-
-//             {/* right col */}
-//             <div>
-
-//                 <img
-//                     src="/laptop.png"
-//                     alt="laptop image"
-//                     className="w-full h-[400px] rounded object-cover "
-//                 />
-
-//             </div>
-
-//             {/* left col */}
-
-//             <div>
-//                 {/* Label */}
-//                 <div className="flex items-center gap-3">
-//                     <span className="w-2 h-2 rounded-full bg-[var(--brand)] shadow-[0_0_12px_var(--brand)]"></span>
-
-//                     <p className="text-xs uppercase tracking-[0.2em] text-[var(--TEXT-PRIMARY)] font-semibold">
-//                         ABOUT ME
-//                     </p>
-//                 </div>
-
-//                 <div className="w-[500px]">
-//                     <h1 className="font-bold leading-tight text-5xl md:text-6xl lg:text-5xl">
-//                         More Than Code
-//                         <br />
-//                         I Build
-//                         <span className="text-[var(--brand)]">
-//                             Solutions
-//                         </span>
-//                         .
-//                     </h1>
-
-//                     <p>I’m Abdul Saboor, a Full Stack Web Developer focused on building fast, modern websites and web apps that help businesses generate leads and convert visitors into customers.
-
-//                        <br/> I enjoy solving problems through simple, effective solutions and pay close attention to how users interact with a product from start to finish.
-//                         My goal is to build websites that feel reliable, purposeful, and built with intention behind every detail.
-//                     </p>
-
-//                     <Button varinat="outline" size="md">Know More About Me
-//                         <Icon name="arrowright"></Icon>
-//                     </Button>
-
-//                 </div>
-//             </div>
-
-
-//         </section>
-//     )
-// }
-
-// export default About
-
-
 import React from "react";
 import Button from "@/elements/button";
 import Icon from "@/elements/icons";
@@ -171,26 +109,27 @@ const About = () => {
                         <div className="space-y-5 text-[var(--text-secondary)] leading-relaxed">
 
                             <p>
-                                I'm Abdul Saboor, a Full Stack Web Developer focused on
-                                building fast, modern websites and web applications that help
-                                businesses generate leads and convert visitors into customers.
-                            </p>
+    I'm Abdus Saboor, a Full Stack Web Developer who started his
+    coding journey in 2021 by learning Python. Since then, I've explored
+    WordPress, web development, and social media marketing, and have been
+    practicing full-stack development for over a year.
+</p>
 
-                            <p>
-                                I enjoy solving problems through simple, effective solutions
-                                and pay close attention to how users interact with a product
-                                from start to finish.
-                            </p>
+<p>
+    I currently work with technologies like HTML, CSS, JavaScript, React,
+    Next.js, and Node.js.
+</p>
 
-                            <p>
-                                My goal is to build websites that feel reliable,
-                                purposeful, and built with intention behind every detail.
-                            </p>
+<p>
+    My goal is to build fast, reliable, and purposeful websites and web
+    applications that create meaningful experiences for users and help
+    businesses grow.
+</p>
 
                         </div>
 
                         {/* Button */}
-                        <div className="pt-2">
+                        {/* <div className="pt-2">
 
                             <Button variant="outline" size="sm">
                                 Know More About Me
@@ -201,7 +140,7 @@ const About = () => {
                                 />
                             </Button>
 
-                        </div>
+                        </div> */}
 
                     </div>
 

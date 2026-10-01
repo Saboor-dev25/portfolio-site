@@ -7,18 +7,27 @@ import Services from "@/sections/services"
 import Projects from "@/sections/projects"
 import Process from "@/sections/process"
 import Contact from "@/sections/contact"
+import Features_section from "@/sections/features";
+import Footer from "@/components/footer"
+import React, { useState } from "react";
 
 const App = () =>  {
+
+  const [contactdata , setcontactdata] = useState({
+    subject: "",
+    message: ""
+  });
   return(
     <div className="min-h-screen overflow-x-hidden">
 
 <Navbar/>
- <Home/> 
+ <Home setcontactdata={setcontactdata}/> 
 <About/>
-<Services/>
+<Services setcontactdata={setcontactdata}/>
 <Projects/>
 <Process/>
-<Contact/>
+<Contact contactdata={contactdata}/>
+<Footer/>
     </div>
   )
 }
