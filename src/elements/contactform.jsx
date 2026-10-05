@@ -108,7 +108,7 @@ const ContactForm = ({
     border-[rgba(255,255,255,0.08)]
     bg-[rgba(10,10,10,0.30)]
     px-4
-    py-3.5
+    py-2.5
     text-sm
     text-[var(--text-primary)]
     outline-none
@@ -121,7 +121,7 @@ const ContactForm = ({
   `;
 
   const labelClass = `
-    mb-2
+    mb-1.5
     block
     text-sm
     font-medium
@@ -133,7 +133,7 @@ const ContactForm = ({
       name="contact"
       method="POST"
       data-netlify="true"
-      className="space-y-5"
+      className="space-y-3.5"
     >
       <input
         type="hidden"
@@ -212,7 +212,7 @@ const ContactForm = ({
           name="message"
           value={message}
           onChange={(e) => setmessage(e.target.value)}
-          rows="6"
+          rows="4"
           placeholder="Tell me a little about your project..."
           required
           className={`${inputClass} resize-none leading-6`}
@@ -231,7 +231,7 @@ const ContactForm = ({
           rounded-xl
           bg-[var(--brand)]
           px-6
-          py-3.5
+          py-2.5
           text-sm
           font-semibold
           text-[var(--background)]

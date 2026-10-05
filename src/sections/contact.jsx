@@ -248,8 +248,8 @@ const Contact = ({ contactdata }) => {
         relative
         overflow-hidden
         bg-[var(--background)]
-        py-16
-        lg:py-24
+        py-6
+        lg:py-10
       "
     >
       <div className="container mx-auto px-5">
@@ -265,16 +265,28 @@ const Contact = ({ contactdata }) => {
             border
             border-[rgba(212,160,23,0.22)]
             bg-[#17110d]
-            p-6
-            sm:p-8
-            lg:p-12
-            xl:p-14
+            // p-6
+            // sm:p-8
+            // lg:p-12
+            // xl:p-14
+            p-5
+            sm:p-6
+            lg:p-7
           "
         >
           {/* ================= COLOR COMPOSITION ================= */}
 
           {/* Large warm amber shape */}
-          <div
+          <motion.div
+            animate={{
+              x: [0, 8, 0, -8, 0],
+              y: [0, -6, 0, 6, 0],
+            }}
+            transition={{
+              duration: 16,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
             className="
               pointer-events-none
               absolute
@@ -286,57 +298,78 @@ const Contact = ({ contactdata }) => {
               rounded-[42%_58%_63%_37%/45%_36%_64%_55%]
               bg-[#d99a16]
               opacity-95
+              will-change-transform
             "
           />
 
           {/* Main orange shape */}
           <div
             className="
-              pointer-events-none
-              absolute
-              -left-24
-              top-16
-              h-[500px]
-              w-[570px]
-              rotate-[8deg]
-              rounded-[63%_37%_32%_68%/58%_44%_56%_42%]
-              bg-[#b95716]
-              opacity-90
-            "
+    pointer-events-none
+    absolute
+    -left-24
+    top-16
+    h-[500px]
+    w-[570px]
+    rotate-[8deg]
+    rounded-[63%_37%_32%_68%/58%_44%_56%_42%]
+    bg-[#b95716]
+    opacity-90
+    will-change-transform
+  "
           />
 
           {/* Deep burnt-orange / red shape */}
-          <div
+          <motion.div
+            animate={{
+              x: [0, 5, 0, -5, 0],
+              y: [0, 7, 0, -7, 0],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
             className="
-              pointer-events-none
-              absolute
-              left-[18%]
-              -top-24
-              h-[420px]
-              w-[430px]
-              rotate-[-18deg]
-              rounded-[38%_62%_70%_30%/48%_30%_70%_52%]
-              bg-[#7e291b]
-              opacity-75
-            "
+    pointer-events-none
+    absolute
+    left-[18%]
+    -top-24
+    h-[420px]
+    w-[430px]
+    rotate-[-18deg]
+    rounded-[38%_62%_70%_30%/48%_30%_70%_52%]
+    bg-[#7e291b]
+    opacity-75
+    will-change-transform
+  "
           />
 
           {/* Golden upper shape */}
-          <div
-            className="
-              pointer-events-none
-              absolute
-              right-[20%]
-              -top-32
-              h-[340px]
-              w-[460px]
-              rotate-[18deg]
-              rounded-[70%_30%_45%_55%/42%_55%_45%_58%]
-              bg-[#e5ad2b]
-              opacity-70
-            "
-          />
-
+          <motion.div
+  animate={{
+    x: [0, -5, 0, 5, 0],
+    y: [0, -4, 0, 4, 0],
+  }}
+  transition={{
+    duration: 21,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="
+    pointer-events-none
+    absolute
+    right-[20%]
+    -top-32
+    h-[340px]
+    will-change-transform
+    w-[460px]
+    rotate-[18deg]
+    rounded-[70%_30%_45%_55%/42%_55%_45%_58%]
+    bg-[#e5ad2b]
+    opacity-70
+  "
+/>
           {/* Deep burgundy bottom shape */}
           <div
             className="
@@ -529,17 +562,17 @@ const Contact = ({ contactdata }) => {
                 Let's create something meaningful together.
               </p> */}
 
-           
-{/* Contact information */}
-<div className="mt-9">
 
-  {/* Email + Phone */}
-  <div className="flex flex-wrap items-center gap-x-10 gap-y-5">
+              {/* Contact information */}
+              <div className="mt-9">
 
-    {/* Email */}
-    <div className="flex items-center gap-3">
-      <div
-        className="
+                {/* Email + Phone */}
+                <div className="flex flex-wrap items-center gap-x-10 gap-y-5">
+
+                  {/* Email */}
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="
           flex
           h-10
           w-10
@@ -551,28 +584,28 @@ const Contact = ({ contactdata }) => {
           border-white/15
           bg-white/10
         "
-      >
-        <Icon
-          name="email"
-          className="h-5 w-5 !text-[var(--background)]"
-        />
-      </div>
+                    >
+                      <Icon
+                        name="email"
+                        className="h-5 w-5 text-white md:text-[var(--background)]"
+                      />
+                    </div>
 
-      <div>
-        <p className="text-sm font-bold uppercase tracking-wider text-[var(--background)]">
-          Email
-        </p>
+                    <div>
+                      <p className="text-sm font-bold uppercase tracking-wider text-white md:text-[var(--background)]">
+                        Email
+                      </p>
 
-        <p className="mt-0.5 text-sm font-semibold text-[var(--background)]">
-          saboordev25@gmail.com
-        </p>
-      </div>
-    </div>
+                      <p className="mt-0.5 text-sm font-semibold text-white md:text-[var(--background)]">
+                        saboordev25@gmail.com
+                      </p>
+                    </div>
+                  </div>
 
-    {/* Phone */}
-    <div className="flex items-center gap-3">
-      <div
-        className="
+                  {/* Phone */}
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="
           flex
           h-10
           w-10
@@ -584,33 +617,33 @@ const Contact = ({ contactdata }) => {
           border-white/15
           bg-white/10
         "
-      >
-        <Icon
-          name="phone"
-          className="h-5 w-5 !text-[var(--background)]"
-        />
-      </div>
+                    >
+                      <Icon
+                        name="phone"
+                        className="h-5 w-5 text-white md:text-[var(--background)]"
+                      />
+                    </div>
 
-      <div>
-        <p className="text-sm font-bold uppercase tracking-wider text-[var(--background)]">
-          Phone
-        </p>
+                    <div>
+                      <p className="text-sm font-bold uppercase tracking-wider text-white md:text-[var(--background)]">
+                        Phone
+                      </p>
 
-        <p className="mt-0.5 text-sm font-semibold text-[var(--background)]">
-          +92 314 1286564
-        </p>
-      </div>
-    </div>
+                      <p className="mt-0.5 text-sm font-semibold text-white md:text-[var(--background)]">
+                        +92 314 1286564
+                      </p>
+                    </div>
+                  </div>
 
-  </div>
+                </div>
 
-  {/* Socials */}
-  <div className="mt-7 flex items-center gap-3">
+                {/* Socials */}
+                <div className="mt-7 flex items-center gap-3">
 
-    {/* LinkedIn */}
-    <button
-      type="button"
-      className="
+                  {/* LinkedIn */}
+                  <button
+                    type="button"
+                    className="
         flex
         h-10
         w-10
@@ -626,17 +659,17 @@ const Contact = ({ contactdata }) => {
         hover:border-[rgba(10,10,10,0.35)]
         hover:bg-[rgba(10,10,10,0.20)]
       "
-    >
-      <Icon
-        name="linkedin"
-        className="h-5 w-5 !text-[#ffffff]"
-      />
-    </button>
+                  >
+                    <Icon
+                      name="linkedin"
+                      className="h-5 w-5 !text-[#ffffff]"
+                    />
+                  </button>
 
-    {/* GitHub */}
-    <button
-      type="button"
-      className="
+                  {/* GitHub */}
+                  <button
+                    type="button"
+                    className="
         flex
         h-10
         w-10
@@ -652,16 +685,16 @@ const Contact = ({ contactdata }) => {
         hover:border-[rgba(10,10,10,0.35)]
         hover:bg-[rgba(10,10,10,0.20)]
       "
-    >
-      <Icon
-        name="github"
-        className="h-5 w-5 !text-[#ffffff]"
-      />
-    </button>
+                  >
+                    <Icon
+                      name="github"
+                      className="h-5 w-5 !text-[#ffffff]"
+                    />
+                  </button>
 
-  </div>
+                </div>
 
-</div>
+              </div>
 
 
             </motion.div>

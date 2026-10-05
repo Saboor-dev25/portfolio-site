@@ -14,7 +14,7 @@
 //     return (
 //         <section>
 //             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
+
 //                 <div className="h-40 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
 //                     <a href="#" className=" text-xl font-bold tracking-tight hover:text-[var(--brand-hover)] ">
 //                         AS<span className="text-[var(--brand-hover)]">.</span>
@@ -22,7 +22,7 @@
 //                     <p> Building websites that help businesses grow online.</p>
 
 //                 </div>
-              
+
 //                 <div className="h-40 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
 //                     <h3 className="ml-5"> Quick Links</h3>
 //                     <ul>
@@ -76,29 +76,18 @@
 // export default Footer
 
 import { motion } from "framer-motion";
+
 import Icon from "@/elements/icons";
 
 const Footer = () => {
-  const navlinks = [
-    { href: "#About", label: "About" },
-    { href: "#Services", label: "Services" },
-    { href: "#Projects", label: "Projects" },
-    { href: "#Process", label: "Process" },
-    { href: "#Contact", label: "Contact" },
-  ];
-
   const socials = [
     {
       name: "github",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/saboor-dev25",
     },
     {
       name: "linkedin",
       href: "https://linkedin.com/in/yourusername",
-    },
-    {
-      name: "instagram",
-      href: "https://instagram.com/yourusername",
     },
   ];
 
@@ -126,81 +115,134 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[var(--background)] py-12 md:py-16">
+    <footer className="bg-[var(--background)] py-8 md:py-10">
       <div className="container mx-auto px-4 sm:px-6">
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
           className="
-            bg-[var(--surface)]
+            relative
+            overflow-hidden
+            rounded-3xl
             border
             border-[var(--border)]
-            rounded-3xl
-            p-8
-            md:p-10
-            lg:p-12
+            bg-[var(--surface)]
+            p-7
+            md:p-8
+            lg:p-9
             transition-all
             duration-500
             hover:border-[#3a3a3a]
           "
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {/* Logo */}
+
+          {/* ================= BACKGROUND SHAPES ================= */}
+
+          {/* Bottom-left golden shape */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -bottom-36
+              left-[5%]
+              h-[280px]
+              w-[380px]
+              rotate-[-15deg]
+              rounded-[45%_55%_60%_40%]
+              bg-[#d99a16]/10
+            "
+          />
+
+          {/* Bottom-right burgundy shape */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -bottom-44
+              right-[18%]
+              h-[300px]
+              w-[420px]
+              rotate-[12deg]
+              rounded-[55%_45%_35%_65%]
+              bg-[#7e291b]/10
+            "
+          />
+
+          {/* Soft center glow */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -bottom-32
+              left-1/2
+              h-72
+              w-72
+              -translate-x-1/2
+              rounded-full
+              bg-[#d99a16]/5
+              blur-[80px]
+            "
+          />
+
+          {/* ================= MAIN CONTENT ================= */}
+
+          <div className="relative z-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+
+            {/* ================= LOGO ================= */}
 
             <motion.div variants={itemVariants}>
               <a
                 href="#"
-                className="text-4xl font-bold tracking-tight text-[var(--text-primary)]"
+                className="
+                  text-4xl
+                  font-bold
+                  tracking-tight
+                  text-[var(--text-primary)]
+                  hover:text-[var(--brand-hover)]
+                "
               >
                 AS<span className="text-[var(--brand)]">.</span>
               </a>
 
-              <p className="mt-5 max-w-[220px] text-sm leading-7 text-[var(--text-secondary)]">
+
+               
+              <p
+                className="
+                  mt-5
+                  max-w-[260px]
+                  text-sm
+                  leading-7
+                  text-[var(--text-secondary)]
+                "
+              >
                 Building websites that help businesses grow online.
               </p>
             </motion.div>
 
-            {/* Quick Links */}
+            {/* ================= CONTACT ================= */}
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-5">
-                Quick Links
-              </h3>
-
-              <ul className="space-y-3">
-                {navlinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="
-                        text-sm
-                        text-[var(--text-secondary)]
-                        transition-colors
-                        duration-300
-                        hover:text-[var(--brand)]
-                      "
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Contact */}
-
-            <motion.div variants={itemVariants}>
-              <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-5">
+              <h3
+                className="
+                  mb-5
+                  text-lg
+                  font-semibold
+                  text-[var(--text-primary)]
+                "
+              >
                 Let's Connect
               </h3>
 
               <div className="space-y-4">
+
+                {/* Email */}
                 <div className="flex items-center gap-3">
                   <Icon
                     name="email"
-                    className="w-4 h-4 text-[var(--brand)]"
+                    className="h-5 w-5 text-[var(--brand)]"
                   />
 
                   <p className="text-sm text-[var(--text-secondary)]">
@@ -208,10 +250,11 @@ const Footer = () => {
                   </p>
                 </div>
 
+                {/* Phone */}
                 <div className="flex items-center gap-3">
                   <Icon
                     name="phone"
-                    className="w-4 h-4 text-[var(--brand)]"
+                    className="h-5 w-5 text-[var(--brand)]"
                   />
 
                   <p className="text-sm text-[var(--text-secondary)]">
@@ -219,54 +262,67 @@ const Footer = () => {
                   </p>
                 </div>
 
+                {/* Location */}
                 <div className="flex items-center gap-3">
                   <Icon
                     name="location"
-                    className="w-4 h-4 text-[var(--brand)]"
+                    className="h-5 w-5  text-[var(--brand)]"
                   />
 
                   <p className="text-sm text-[var(--text-secondary)]">
-                    Pakistan
+                    Karachi, Pakistan
                   </p>
                 </div>
+
               </div>
             </motion.div>
 
-            {/* Social */}
+            {/* ================= SOCIAL ================= */}
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-5">
+              <h3
+                className="
+                  mb-5
+                  text-lg
+                  font-semibold
+                  text-[var(--text-primary)]
+                "
+              >
                 Follow Me
               </h3>
 
               <div className="flex items-center gap-3">
+
                 {socials.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit my ${social.name}`}
                     className="
                       group
-                      w-10
+                      flex
                       h-10
+                      w-10
+                      items-center
+                      justify-center
                       rounded-full
                       border
                       border-[var(--border)]
-                      flex
-                      items-center
-                      justify-center
+                      bg-[rgba(255,255,255,0.02)]
                       transition-all
                       duration-300
-                      hover:border-[var(--brand)]
                       hover:-translate-y-1
+                      hover:border-[var(--brand)]
+                      hover:bg-[rgba(212,160,23,0.08)]
                     "
                   >
                     <Icon
                       name={social.name}
                       className="
-                        w-4
                         h-4
+                        w-4
                         text-white
                         transition-colors
                         duration-300
@@ -275,21 +331,32 @@ const Footer = () => {
                     />
                   </a>
                 ))}
+
               </div>
             </motion.div>
+
           </div>
 
-          {/* Bottom */}
+          {/* ================= COPYRIGHT ================= */}
 
           <motion.div
             variants={itemVariants}
-            className="mt-10 pt-6 border-t border-[var(--border)]"
+            className="
+              relative
+              z-10
+              mt-8
+              border-t
+              border-[var(--border)]
+              pt-6
+            "
           >
             <p className="text-center text-sm text-[var(--text-secondary)]">
               © 2026 Abdus Saboor. All rights reserved.
             </p>
           </motion.div>
+
         </motion.div>
+
       </div>
     </footer>
   );
