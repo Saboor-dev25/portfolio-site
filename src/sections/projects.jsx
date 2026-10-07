@@ -1,10 +1,19 @@
 import React from "react";
+import ProjectsCard from "@/components/projectscard";
+import projects from "@/data/projects";
 
-const Projects = () => {
+const ProjectsScreen = () => {
     return(
-        <div> </div>
-    )
-}
+        <div>
+            {
+                projects.map( (project) => 
+                    <ProjectsCard key={project.id} project={project} />
 
-export default Projects
+                )
+            }
+        </div>
+    )
+};
+
+export default ProjectsScreen
 

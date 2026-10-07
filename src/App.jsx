@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import Home from "@/sections/home"
 import About from "@/sections/about"
 import Services from "@/sections/services"
-import Projects from "@/sections/projects"
+import ProjectsScreen from "@/sections/projects"
 import Process from "@/sections/process"
 import Contact from "@/sections/contact"
 import Features_section from "@/sections/features";
@@ -24,7 +24,7 @@ const App = () =>  {
  <Home setcontactdata={setcontactdata}/> 
 <About/>
 <Services setcontactdata={setcontactdata}/>
-<Projects/>
+<ProjectsScreen/>
 <Process/>
 <Contact contactdata={contactdata}/>
 <Footer/>

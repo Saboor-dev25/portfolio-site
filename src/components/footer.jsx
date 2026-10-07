@@ -87,7 +87,7 @@ const Footer = () => {
     },
     {
       name: "linkedin",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/abdussaboor25",
     },
   ];
 
